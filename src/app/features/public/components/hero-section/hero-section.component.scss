@@ -12,7 +12,7 @@ $accent-color: $brand-action;
 }
 
 .text-accent {
-  color: $accent-color !important;
+  color: #cda056 !important;
 }
 
 .bg-accent {
@@ -89,4 +89,22 @@ $accent-color: $brand-action;
   background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
+}
+
+.feature-pill {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+
+    .text-accent {
+      color: #fff !important;
+    }
+  }
+}
+
+.feature-pill .text-accent {
+  color: lighten($brand-action, 10%) !important; // Brighter gold
 }
