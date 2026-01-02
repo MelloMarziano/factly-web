@@ -36,6 +36,7 @@ export class RegistrationService {
       address,
       phone,
       adminUser,
+      certificatePassword,
     } = data;
 
     return from(
@@ -88,6 +89,7 @@ export class RegistrationService {
           email: email,
           logoUrl,
           certificateUrl,
+          certificatePassword: certificatePassword || null,
           createdAt: new Date(),
           status: 'active',
           electronicBillingStatus: 'TEST',
