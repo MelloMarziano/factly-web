@@ -1,0 +1,22 @@
+@import 'variables';
+
+.legal-page {
+  background-color: $bg-app;
+  min-height: 100vh;
+  padding-top: 180px; // Aumentado para asegurar que baje del header
+
+  h1 {
+    color: $brand-action;
+  }
+
+  h3 {
+    color: $brand-principal;
+    border-bottom: 2px solid rgba($brand-action, 0.1);
+    padding-bottom: 10px;
+  }
+
+  p {
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+}

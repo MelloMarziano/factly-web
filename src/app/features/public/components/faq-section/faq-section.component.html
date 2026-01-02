@@ -1,0 +1,46 @@
+<section class="faq-section py-5 bg-white" id="faq">
+  <div class="container py-5">
+    <div class="text-center mb-5 animate-on-scroll">
+      <span class="text-uppercase fw-bold text-brand-primary small tracking-wide">Dudas Comunes</span>
+      <h2 class="display-5 fw-bold text-brand-primary mt-2">Preguntas Frecuentes</h2>
+      <p class="text-secondary mx-auto" style="max-width: 600px;">
+        Resolvemos tus dudas principales para que tomes la mejor decisión para tu negocio.
+      </p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 animate-on-scroll delay-200">
+        <div class="accordion" id="faqAccordion">
+          <div *ngFor="let faq of faqs; let i = index" class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+            <h2 class="accordion-header" [id]="'heading' + i">
+              <button class="accordion-button collapsed fw-bold text-brand-primary px-4 py-3" 
+                      type="button" 
+                      data-bs-toggle="collapse" 
+                      [attr.data-bs-target]="'#collapse' + i" 
+                      [attr.aria-expanded]="false" 
+                      [attr.aria-controls]="'collapse' + i">
+                {{faq.question}}
+              </button>
+            </h2>
+            <div [id]="'collapse' + i" 
+                 class="accordion-collapse collapse" 
+                 [attr.aria-labelledby]="'heading' + i" 
+                 data-bs-parent="#faqAccordion">
+              <div class="accordion-body px-4 pb-4 pt-0 text-secondary">
+                {{faq.answer}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <p class="text-secondary mb-3">¿Tienes más preguntas?</p>
+          <a href="https://wa.me/18492669167" target="_blank" class="btn btn-outline-secondary rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2">
+            <lucide-icon name="message-circle" [size]="18"></lucide-icon>
+            Contactar Soporte
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -44,6 +44,11 @@ import { FeaturesSectionComponent } from './components/features-section/features
 import { PricingSectionComponent } from './components/pricing-section/pricing-section.component';
 import { RegistrationSectionComponent } from './components/registration-section/registration-section.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FaqSectionComponent } from './components/faq-section/faq-section.component';
+import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-button.component';
+import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   imports: [
@@ -94,6 +99,11 @@ import { FooterComponent } from './components/footer/footer.component';
     PricingSectionComponent,
     RegistrationSectionComponent,
     FooterComponent,
+    FaqSectionComponent,
+    WhatsappButtonComponent,
+    TermsOfServiceComponent,
+    PrivacyPolicyComponent,
+    LandingComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [

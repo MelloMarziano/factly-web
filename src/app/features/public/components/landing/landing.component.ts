@@ -1,13 +1,11 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  selector: 'app-landing',
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss']
 })
-export class FooterComponent implements AfterViewInit {
-  currentYear = new Date().getFullYear();
-
+export class LandingComponent implements AfterViewInit {
   constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {

@@ -15,31 +15,34 @@
 
       <!-- Desktop Navigation -->
       <nav class="d-none d-md-flex align-items-center gap-4">
-        <button
-          (click)="scrollToSection('caracteristicas')"
-          class="btn btn-link text-decoration-none text-secondary fw-medium p-0 hover-text-primary"
+        <a
+          routerLink="/public"
+          fragment="caracteristicas"
+          class="text-decoration-none text-secondary fw-medium p-0 hover-text-primary"
         >
           Características
-        </button>
-        <button
-          (click)="scrollToSection('planes')"
-          class="btn btn-link text-decoration-none text-secondary fw-medium p-0 hover-text-primary"
+        </a>
+        <a
+          routerLink="/public"
+          fragment="planes"
+          class="text-decoration-none text-secondary fw-medium p-0 hover-text-primary"
         >
           Planes
-        </button>
-        <button
-          (click)="scrollToSection('registro')"
-          class="btn btn-link text-decoration-none text-secondary fw-medium p-0 hover-text-primary"
+        </a>
+        <a
+          routerLink="/public"
+          fragment="registro"
+          class="text-decoration-none text-secondary fw-medium p-0 hover-text-primary"
         >
           Registro
-        </button>
+        </a>
       </nav>
 
       <!-- CTA Button -->
       <div class="d-none d-md-block">
-        <button class="btn btn-gold rounded-pill px-4" (click)="scrollToSection('registro')">
+        <a routerLink="/public" fragment="registro" class="btn btn-gold rounded-pill px-4">
           Comenzar Ahora
-        </button>
+        </a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -53,27 +56,33 @@
 
     <!-- Mobile Navigation -->
     <nav *ngIf="isMenuOpen" class="d-md-none mt-3 pt-3 border-top border-secondary-subtle d-flex flex-column gap-3 animate-fade-in">
-      <button
-        (click)="scrollToSection('caracteristicas')"
-        class="btn btn-link text-decoration-none text-start text-secondary fw-medium p-0 hover-text-primary"
+      <a
+        routerLink="/public"
+        fragment="caracteristicas"
+        (click)="toggleMenu()"
+        class="text-decoration-none text-start text-secondary fw-medium p-0 hover-text-primary"
       >
         Características
-      </button>
-      <button
-        (click)="scrollToSection('planes')"
-        class="btn btn-link text-decoration-none text-start text-secondary fw-medium p-0 hover-text-primary"
+      </a>
+      <a
+        routerLink="/public"
+        fragment="planes"
+        (click)="toggleMenu()"
+        class="text-decoration-none text-start text-secondary fw-medium p-0 hover-text-primary"
       >
         Planes
-      </button>
-      <button
-        (click)="scrollToSection('registro')"
-        class="btn btn-link text-decoration-none text-start text-secondary fw-medium p-0 hover-text-primary"
+      </a>
+      <a
+        routerLink="/public"
+        fragment="registro"
+        (click)="toggleMenu()"
+        class="text-decoration-none text-start text-secondary fw-medium p-0 hover-text-primary"
       >
         Registro
-      </button>
-      <button class="btn btn-gold w-100 rounded-pill" (click)="scrollToSection('registro')">
+      </a>
+      <a routerLink="/public" fragment="registro" (click)="toggleMenu()" class="btn btn-gold w-100 rounded-pill">
         Comenzar Ahora
-      </button>
+      </a>
     </nav>
   </div>
 </header>
