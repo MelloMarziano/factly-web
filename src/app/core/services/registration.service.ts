@@ -29,7 +29,8 @@ export class RegistrationService {
     certificateFile?: File
   ): Observable<any> {
     const {
-      email,
+      companyEmail,
+      userEmail,
       password,
       companyRnc,
       companyName,
@@ -40,7 +41,7 @@ export class RegistrationService {
     } = data;
 
     return from(
-      createUserWithEmailAndPassword(this.auth, email, password)
+      createUserWithEmailAndPassword(this.auth, userEmail, password)
     ).pipe(
       switchMap(async (userCredential) => {
         const user = userCredential.user;
@@ -86,7 +87,7 @@ export class RegistrationService {
           name: companyName,
           address: address || '',
           phone: phone || '',
-          email: email,
+          email: companyEmail,
           logoUrl,
           certificateUrl,
           certificatePassword: certificatePassword || null,
@@ -102,7 +103,7 @@ export class RegistrationService {
         );
         batch.set(memberRef, {
           uid: uid,
-          email: email,
+          email: userEmail,
           role: 'owner',
           joinedAt: new Date(),
         });
@@ -110,7 +111,7 @@ export class RegistrationService {
         // 3. Create User Profile
         const userRef = doc(this.firestore, `users/${uid}`);
         batch.set(userRef, {
-          email: email,
+          email: userEmail,
           displayName: adminUser,
           activeTenantId: companyRnc,
           createdAt: new Date(),

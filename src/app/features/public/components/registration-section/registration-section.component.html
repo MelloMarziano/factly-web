@@ -42,8 +42,8 @@
                     <input type="tel" class="form-control bg-input" formControlName="phone" placeholder="(809) 555-1234">
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label small fw-bold text-brand-primary">Email *</label>
-                    <input type="email" class="form-control bg-input" formControlName="email" placeholder="contacto@miempresa.com">
+                    <label class="form-label small fw-bold text-brand-primary">Correo Electrónico de la Empresa *</label>
+                    <input type="email" class="form-control bg-input" formControlName="companyEmail" placeholder="contacto@empresa.com">
                   </div>
                 </div>
               </div>
@@ -93,9 +93,13 @@
                 </div>
 
                 <div class="row g-3">
-                  <div class="col-12">
+                  <div class="col-md-6">
                     <label class="form-label small fw-bold text-brand-primary">Usuario Administrador *</label>
                     <input type="text" class="form-control bg-input" formControlName="adminUser" value="admin" readonly>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Correo de Inicio de Sesión *</label>
+                    <input type="email" class="form-control bg-input" formControlName="userEmail" placeholder="usuario@empresa.com">
                   </div>
                   <div class="col-md-6">
                     <label class="form-label small fw-bold text-brand-primary">Contraseña *</label>

@@ -21,13 +21,14 @@ export class RegistrationSectionComponent {
       {
         companyRnc: ['', Validators.required],
         companyName: ['', Validators.required],
-        address: [''],
-        phone: [''],
-        email: ['', [Validators.required, Validators.email]],
-        // certificateFile and logoFile are handled separately via file inputs
-        certificatePassword: [''],
-        adminUser: [{ value: 'admin', disabled: true }, Validators.required],
-        password: ['', [Validators.required, Validators.minLength(6)]],
+      address: [''],
+      phone: [''],
+      companyEmail: ['', [Validators.required, Validators.email]],
+      // certificateFile and logoFile are handled separately via file inputs
+      certificatePassword: [''],
+      adminUser: [{ value: 'admin', disabled: true }, Validators.required],
+      userEmail: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
         confirmPassword: ['', Validators.required],
       },
       { validators: this.passwordMatchValidator }
