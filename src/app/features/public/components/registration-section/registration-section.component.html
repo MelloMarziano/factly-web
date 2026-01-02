@@ -60,16 +60,20 @@
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label class="form-label small fw-bold text-brand-primary">Certificado Digital (.p12)</label>
-                    <div class="upload-box dashed-border rounded-3 p-3 text-center cursor-pointer">
+                    <div class="upload-box dashed-border rounded-3 p-3 text-center cursor-pointer position-relative">
+                      <input type="file" (change)="onCertificateSelected($event)" accept=".p12" class="position-absolute top-0 start-0 w-100 h-100 opacity-0 cursor-pointer" style="z-index: 10;">
                       <lucide-icon name="upload" [size]="20" class="text-brand-action mb-2"></lucide-icon>
-                      <p class="mb-0 small text-secondary">Seleccionar archivo</p>
+                      <p class="mb-0 small text-secondary" *ngIf="!selectedCertificate">Seleccionar archivo</p>
+                      <p class="mb-0 small text-success fw-bold text-truncate px-2" *ngIf="selectedCertificate">{{ selectedCertificate.name }}</p>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label small fw-bold text-brand-primary">Logo de la Empresa</label>
-                    <div class="upload-box dashed-border rounded-3 p-3 text-center cursor-pointer">
+                    <div class="upload-box dashed-border rounded-3 p-3 text-center cursor-pointer position-relative">
+                      <input type="file" (change)="onLogoSelected($event)" accept="image/*" class="position-absolute top-0 start-0 w-100 h-100 opacity-0 cursor-pointer" style="z-index: 10;">
                       <lucide-icon name="upload" [size]="20" class="text-brand-action mb-2"></lucide-icon>
-                      <p class="mb-0 small text-secondary">Seleccionar imagen</p>
+                      <p class="mb-0 small text-secondary" *ngIf="!selectedLogo">Seleccionar imagen</p>
+                      <p class="mb-0 small text-success fw-bold text-truncate px-2" *ngIf="selectedLogo">{{ selectedLogo.name }}</p>
                     </div>
                   </div>
                 </div>
