@@ -1,0 +1,42 @@
+<section id="caracteristicas" class="features-section py-5 position-relative overflow-hidden">
+  <!-- Background Accent -->
+  <div class="background-accent position-absolute rounded-circle blur-3xl"></div>
+
+  <div class="container position-relative z-1 py-5">
+    <!-- Section Header -->
+    <div class="text-center mx-auto mb-5 animate-on-scroll" style="max-width: 42rem;">
+      <span class="d-inline-block text-accent fw-semibold small text-uppercase tracking-wider mb-3">
+        Módulos
+      </span>
+      <h2 class="font-display fw-bold display-5 text-primary-emphasis mb-3">
+        Todo lo que necesitas para facturar
+      </h2>
+      <p class="text-secondary lead fs-6">
+        Una solución completa para la gestión de tu negocio y el cumplimiento fiscal electrónico.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col animate-on-scroll" *ngFor="let feature of features; let i = index" [class]="'delay-' + ((i + 1) * 100)">
+        <div class="feature-card card h-100 border border-secondary-subtle rounded-4 p-4 shadow-sm position-relative overflow-hidden transition-all">
+          <!-- Icon -->
+          <div class="icon-container d-flex align-items-center justify-content-center rounded-3 mb-4 transition-transform">
+            <lucide-icon [name]="feature.icon" [size]="28"></lucide-icon>
+          </div>
+
+          <!-- Content -->
+          <h3 class="font-display h5 fw-semibold text-primary-emphasis mb-2">
+            {{feature.title}}
+          </h3>
+          <p class="text-secondary small mb-0 lh-base">
+            {{feature.description}}
+          </p>
+
+          <!-- Hover Accent -->
+          <div class="hover-bar position-absolute bottom-0 start-0 w-100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

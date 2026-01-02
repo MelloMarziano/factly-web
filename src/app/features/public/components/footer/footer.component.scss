@@ -1,0 +1,66 @@
+@import 'variables';
+
+// Match Hero Section background
+$gradient-start: $brand-primary;
+$gradient-end: darken($brand-primary, 5%);
+$footer-text: #ffffff;
+$footer-action: $brand-action;
+
+.footer {
+  background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%);
+  color: $footer-text;
+  font-size: 0.95rem;
+}
+
+.font-serif {
+  font-family: serif;
+}
+
+.text-brand-action {
+  color: $footer-action !important;
+}
+
+.text-secondary {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.border-dark-10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  background-color: $footer-action;
+  border-radius: 8px;
+  color: white;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    background-color: $footer-action;
+    color: white;
+    border-color: $footer-action;
+    transform: translateY(-2px);
+  }
+}
+
+.hover-action {
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $footer-action !important;
+  }
+}

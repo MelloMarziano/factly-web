@@ -1,0 +1,89 @@
+<section id="planes" class="pricing-section py-5 position-relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="blob blob-1 position-absolute rounded-circle blur-3xl"></div>
+  <div class="blob blob-2 position-absolute rounded-circle blur-3xl"></div>
+
+  <div class="container position-relative z-1 py-5">
+    <!-- Section Header -->
+    <div class="text-center mx-auto mb-5 animate-on-scroll" style="max-width: 42rem;">
+      <span class="d-inline-block text-primary-brand fw-semibold small text-uppercase tracking-wider mb-3">
+        Planes
+      </span>
+      <h2 class="font-display fw-bold display-5 text-primary-emphasis mb-3">
+        Precios simples y transparentes
+      </h2>
+      <p class="text-secondary lead fs-6">
+        Elige el plan que mejor se adapte a las necesidades de tu negocio.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mx-auto" style="max-width: 64rem;">
+      <div class="col animate-on-scroll" *ngFor="let plan of plans; let i = index" [class]="'delay-' + ((i + 1) * 200)">
+        <div class="card h-100 rounded-4 p-4 p-lg-5 transition-all shadow-sm position-relative"
+             [ngClass]="plan.popular ? 'card-popular' : 'card-standard'">
+
+          <!-- Popular Badge -->
+          <div *ngIf="plan.popular" class="position-absolute top-0 start-50 translate-middle">
+            <div class="d-flex align-items-center gap-1 badge-popular px-3 py-2 rounded-pill small fw-semibold shadow-sm">
+              <lucide-icon name="star" [size]="16" class="fill-current"></lucide-icon>
+              Más Popular
+            </div>
+          </div>
+
+          <!-- Plan Header -->
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <div class="icon-box rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 56px; height: 56px;">
+              <lucide-icon [name]="plan.icon" [size]="28"></lucide-icon>
+            </div>
+            <div>
+              <h3 class="font-display h4 fw-bold mb-1">
+                {{plan.name}}
+              </h3>
+              <p class="small mb-0 opacity-75">
+                {{plan.description}}
+              </p>
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="mb-4">
+            <div class="d-flex align-items-baseline gap-1">
+              <span class="fs-5 opacity-75">RD$</span>
+              <span class="font-display display-4 fw-bold">
+                {{plan.price}}
+              </span>
+              <span class="opacity-75">{{plan.period}}</span>
+            </div>
+            <p *ngIf="plan.popular" class="small mt-2 fw-medium text-highlight">
+              + RD$800/mes después del primer mes
+            </p>
+          </div>
+
+          <!-- Features -->
+          <ul class="list-unstyled mb-4 d-flex flex-column gap-3 flex-grow-1">
+            <li *ngFor="let feature of plan.features" class="d-flex align-items-start gap-3">
+              <div class="check-circle rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 mt-1" style="width: 20px; height: 20px;">
+                <lucide-icon name="check" [size]="12"></lucide-icon>
+              </div>
+              <span class="small">{{feature}}</span>
+            </li>
+          </ul>
+
+          <!-- CTA Button -->
+          <button class="btn btn-cta w-100 py-3 rounded-pill fw-medium transition-all"
+                  (click)="scrollToSection('registro')">
+            {{plan.cta}}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="text-center mt-5 pt-4 animate-on-scroll delay-400">
+      <p class="text-secondary small">
+        ¿Tienes preguntas? Contáctanos al <span class="fw-bold text-primary-emphasis">(809) 555-1234</span> o por <a href="mailto:ventas@factly.do" class="text-primary-emphasis fw-bold text-decoration-none">ventas@factly.do</a>
+      </p>
+    </div>
+  </div>
+</section>

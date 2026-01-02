@@ -1,0 +1,92 @@
+@import 'variables';
+
+// Use global variables
+$gradient-start: $brand-primary;
+$gradient-end: darken($brand-primary, 5%);
+$accent-color: $brand-action;
+
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%);
+  color: #ffffff;
+}
+
+.text-accent {
+  color: $accent-color !important;
+}
+
+.bg-accent {
+  background-color: $accent-color !important;
+}
+
+.text-primary-emphasis {
+  color: #ffffff !important;
+}
+
+.text-secondary {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.text-secondary-emphasis {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.border-secondary-subtle {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-primary {
+  background-color: $brand-action !important;
+  border-color: $brand-action !important;
+  color: #fff !important;
+
+  &:hover {
+    background-color: lighten($brand-action, 5%) !important;
+    border-color: lighten($brand-action, 5%) !important;
+  }
+}
+
+.btn-outline-secondary {
+  color: #fff !important;
+  border-color: #fff !important;
+
+  &:hover {
+    background-color: #fff !important;
+    color: $brand-primary !important;
+  }
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-5 {
+  opacity: 0.05;
+}
+
+.blob {
+  filter: blur(64px);
+  opacity: 0.4;
+}
+
+.blob-1 {
+  top: 5rem;
+  left: 2.5rem;
+  width: 18rem;
+  height: 18rem;
+  background-color: lighten($brand-primary, 10%);
+}
+
+.blob-2 {
+  bottom: 5rem;
+  right: 2.5rem;
+  width: 24rem;
+  height: 24rem;
+  background-color: $brand-action;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}

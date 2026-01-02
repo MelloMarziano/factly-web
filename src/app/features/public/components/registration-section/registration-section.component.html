@@ -1,0 +1,115 @@
+<section class="registration-section py-5" id="registro">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center mb-5 animate-on-scroll">
+      <span class="text-uppercase fw-bold text-brand-primary small tracking-wide">Registro</span>
+      <h2 class="display-5 fw-bold text-brand-primary mt-2">Registra tu Empresa</h2>
+      <p class="text-secondary">Completa el formulario para comenzar a usar Factly en tu negocio.</p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8 animate-on-scroll delay-200">
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+          <div class="card-body p-4 p-md-5 bg-card">
+
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+              <!-- Section 1: Datos de la Empresa -->
+              <div class="mb-5">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="icon-box bg-brand-primary text-white rounded-3 p-2 me-3">
+                    <lucide-icon name="building-2" [size]="24"></lucide-icon>
+                  </div>
+                  <h4 class="mb-0 fw-bold text-brand-primary font-serif">Datos de la Empresa</h4>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">RNC de la Empresa *</label>
+                    <input type="text" class="form-control bg-input border-0" formControlName="companyRnc" placeholder="123456789">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Nombre de la Empresa *</label>
+                    <input type="text" class="form-control bg-input border-0" formControlName="companyName" placeholder="Mi Empresa SRL">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-bold text-brand-primary">Dirección</label>
+                    <input type="text" class="form-control bg-input border-0" formControlName="address" placeholder="Calle Principal #123, Santo Domingo">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Teléfono</label>
+                    <input type="tel" class="form-control bg-input border-0" formControlName="phone" placeholder="(809) 555-1234">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Email *</label>
+                    <input type="email" class="form-control bg-input border-0" formControlName="email" placeholder="contacto@miempresa.com">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 2: Archivos -->
+              <div class="mb-5">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="icon-box bg-brand-action text-white rounded-3 p-2 me-3">
+                    <lucide-icon name="file-text" [size]="24"></lucide-icon>
+                  </div>
+                  <h4 class="mb-0 fw-bold text-brand-primary font-serif">Archivos</h4>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Certificado Digital (.p12)</label>
+                    <div class="upload-box dashed-border rounded-3 p-3 text-center cursor-pointer">
+                      <lucide-icon name="upload" [size]="20" class="text-brand-action mb-2"></lucide-icon>
+                      <p class="mb-0 small text-secondary">Seleccionar archivo</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Logo de la Empresa</label>
+                    <div class="upload-box dashed-border rounded-3 p-3 text-center cursor-pointer">
+                      <lucide-icon name="upload" [size]="20" class="text-brand-action mb-2"></lucide-icon>
+                      <p class="mb-0 small text-secondary">Seleccionar imagen</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 3: Credenciales -->
+              <div class="mb-5">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="icon-box bg-brand-primary text-white rounded-3 p-2 me-3">
+                    <lucide-icon name="user" [size]="24"></lucide-icon>
+                  </div>
+                  <h4 class="mb-0 fw-bold text-brand-primary font-serif">Credenciales de Administrador</h4>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label small fw-bold text-brand-primary">Usuario Administrador *</label>
+                    <input type="text" class="form-control bg-input border-0" formControlName="adminUser" value="admin" readonly>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Contraseña *</label>
+                    <input type="password" class="form-control bg-input border-0" formControlName="password" placeholder="••••••••">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Confirmar Contraseña *</label>
+                    <input type="password" class="form-control bg-input border-0" formControlName="confirmPassword" placeholder="••••••••">
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-end">
+                <button type="submit" class="btn btn-brand-action rounded-pill px-5 py-3 fw-bold shadow-sm d-flex align-items-center gap-2 ms-auto">
+                  Registrar Empresa
+                  <lucide-icon name="arrow-right" [size]="20"></lucide-icon>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

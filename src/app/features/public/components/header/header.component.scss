@@ -1,0 +1,65 @@
+@import 'variables';
+
+$header-text: $brand-primary;
+$header-action: $brand-action;
+
+.header-bg {
+  background-color: rgba(246, 245, 239, 0.85); // #f6f5ef with opacity
+  backdrop-filter: blur(12px);
+  z-index: -1;
+  border-bottom: 1px solid rgba(75, 35, 49, 0.05); // #4b2331 opacity
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: $brand-primary;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.font-display {
+  font-family: 'Inter Tight', sans-serif;
+}
+
+.text-primary-emphasis {
+  color: $header-text !important;
+}
+
+.text-secondary {
+  color: rgba($header-text, 0.8) !important;
+}
+
+.hover-text-primary {
+  transition: color 0.2s ease;
+  &:hover {
+    color: $header-text !important;
+  }
+}
+
+.btn-gold {
+  background-color: $header-action;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  transition: opacity 0.2s;
+
+  &:hover {
+    background-color: lighten($header-action, 5%);
+    color: #fff;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

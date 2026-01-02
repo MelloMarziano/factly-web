@@ -1,0 +1,91 @@
+@import 'variables';
+
+$accent-color: $brand-primary;
+$primary-color: $brand-primary;
+$card-bg-light: #ffffff;
+
+.pricing-section {
+  background-color: $brand-bg;
+}
+
+// Common card styles
+.card {
+  transition: all 0.3s ease;
+  background-color: $card-bg-light;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.card-standard {
+  border: 1px solid rgba($brand-primary, 0.1);
+  color: $brand-primary;
+
+  .icon-box {
+    background-color: $brand-primary;
+    color: white;
+  }
+
+  .btn-cta {
+    background-color: $brand-primary;
+    color: white;
+
+    &:hover {
+      background-color: lighten($brand-primary, 5%);
+    }
+  }
+
+  .check-circle {
+    background-color: rgba($brand-primary, 0.05);
+    color: $brand-primary;
+  }
+}
+
+.card-popular {
+  border: 2px solid $brand-action; // Gold border
+  color: $brand-primary;
+  position: relative;
+  // Removed transform scale to keep same size
+
+  .badge-popular {
+    background-color: $brand-action;
+    color: white;
+    top: -12px; // Position on top of border
+  }
+
+  .icon-box {
+    background-color: $brand-action;
+    color: white;
+  }
+
+  .text-highlight {
+    color: $brand-action !important;
+  }
+
+  .btn-cta {
+    background-color: $brand-action;
+    color: white;
+
+    &:hover {
+      background-color: lighten($brand-action, 5%);
+    }
+  }
+
+  .check-circle {
+    background-color: rgba($brand-action, 0.1);
+    color: $brand-action; // Or keep primary depending on preference, image suggests gold tone
+  }
+}
+
+.font-display {
+  font-family: 'Inter Tight', sans-serif;
+}
+
+.blob {
+  filter: blur(64px);
+  opacity: 0.1;
+  z-index: 0;
+  background-color: $brand-primary;
+}

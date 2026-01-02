@@ -1,0 +1,86 @@
+<section class="hero-section position-relative d-flex align-items-center overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="background-pattern position-absolute top-0 start-0 w-100 h-100 opacity-10 pe-none">
+    <div class="blob blob-1 position-absolute rounded-circle"></div>
+    <div class="blob blob-2 position-absolute rounded-circle"></div>
+  </div>
+
+  <!-- Grid Pattern -->
+  <div class="grid-pattern position-absolute top-0 start-0 w-100 h-100 opacity-5 pe-none"></div>
+
+  <div class="container position-relative z-1 py-5 mt-5">
+    <div class="text-center mx-auto" style="max-width: 896px;">
+      <!-- Badge -->
+      <div class="badge-container d-inline-flex align-items-center gap-2 rounded-pill px-3 py-2 mb-4 border border-secondary-subtle animate-on-scroll">
+        <span class="dot rounded-circle bg-accent"></span>
+        <span class="text-secondary-emphasis small fw-medium">
+          Cumple con las normativas DGII
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="display-3 fw-bold mb-4 text-primary-emphasis font-display animate-on-scroll delay-100">
+        Facturación Electrónica
+        <span class="d-block gradient-text">
+          Simple y Ligera
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="lead text-secondary mb-5 mx-auto animate-on-scroll delay-200" style="max-width: 42rem;">
+        Emite comprobantes fiscales electrónicos de forma rápida y sencilla.
+        <span class="fw-semibold"> Desde RD$800/mes.</span>
+      </p>
+
+      <!-- Feature Pills -->
+      <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 animate-on-scroll delay-300">
+        <div *ngFor="let feature of features"
+             class="feature-pill d-flex align-items-center gap-2 rounded-pill px-3 py-2 border border-secondary-subtle">
+           <lucide-icon name="check-circle" class="text-accent" [size]="16"></lucide-icon>
+           <span class="text-secondary-emphasis small fw-medium">{{feature}}</span>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 animate-on-scroll delay-400">
+        <button class="btn btn-primary btn-lg rounded-pill px-4 d-flex align-items-center gap-2" (click)="scrollToSection('registro')">
+          Registrar mi Empresa
+          <lucide-icon name="arrow-right" [size]="20"></lucide-icon>
+        </button>
+        <button class="btn btn-outline-secondary btn-lg rounded-pill px-4" (click)="scrollToSection('planes')">
+          Ver Planes
+        </button>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="mt-5 pt-4 border-top border-secondary-subtle animate-on-scroll delay-500">
+        <p class="text-secondary small mb-3">
+          Empresas dominicanas confían en Factly
+        </p>
+        <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
+          <div class="text-center">
+            <p class="h3 fw-bold text-primary-emphasis mb-0">100%</p>
+            <p class="small text-secondary mb-0">Cumplimiento DGII</p>
+          </div>
+          <div class="vr h-100 bg-secondary opacity-25" style="min-height: 40px;"></div>
+          <div class="text-center">
+            <p class="h3 fw-bold text-primary-emphasis mb-0">24/7</p>
+            <p class="small text-secondary mb-0">Soporte Técnico</p>
+          </div>
+          <div class="vr h-100 bg-secondary opacity-25" style="min-height: 40px;"></div>
+          <div class="text-center">
+            <p class="h3 fw-bold text-primary-emphasis mb-0">RD$800</p>
+            <p class="small text-secondary mb-0">Mensual</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4 animate-bounce d-none d-md-block">
+    <div class="mouse-icon rounded-pill border border-secondary border-2 p-1 d-flex justify-content-center pt-1">
+      <div class="wheel rounded-pill bg-secondary opacity-50"></div>
+    </div>
+  </div>
+</section>

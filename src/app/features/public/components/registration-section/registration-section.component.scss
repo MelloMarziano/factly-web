@@ -1,0 +1,90 @@
+@import 'variables';
+
+$primary-color: $brand-primary;
+$action-color: $brand-action;
+$bg-color: $brand-bg;
+
+.registration-section {
+  background-color: $bg-color;
+}
+
+.text-brand-primary {
+  color: $primary-color !important;
+}
+
+.text-brand-action {
+  color: $action-color !important;
+}
+
+.text-secondary {
+  color: rgba($primary-color, 0.7) !important;
+}
+
+.bg-card {
+  background-color: #ffffff;
+}
+
+.bg-input {
+  background-color: #ffffff;
+  border: 1px solid rgba($primary-color, 0.1);
+  transition: all 0.2s ease;
+
+  &:focus {
+    background-color: #ffffff;
+    border-color: $action-color;
+    box-shadow: 0 0 0 2px rgba($action-color, 0.1);
+  }
+
+  &[readonly] {
+    background-color: rgba($primary-color, 0.05);
+    cursor: not-allowed;
+  }
+}
+
+.bg-brand-primary {
+  background-color: $primary-color !important;
+}
+
+.bg-brand-action {
+  background-color: $action-color !important;
+}
+
+.btn-brand-action {
+  background-color: $action-color;
+  border: none;
+  transition: all 0.3s ease;
+  color: #fff;
+
+  &:hover {
+    background-color: lighten($action-color, 5%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba($action-color, 0.2);
+  }
+}
+
+.upload-box {
+  background-color: rgba($primary-color, 0.02);
+  transition: all 0.2s ease;
+  border-color: rgba($primary-color, 0.1);
+
+  &:hover {
+    background-color: rgba($primary-color, 0.05);
+    border-color: $action-color;
+  }
+}
+
+.dashed-border {
+  border: 2px dashed rgba($primary-color, 0.15);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
