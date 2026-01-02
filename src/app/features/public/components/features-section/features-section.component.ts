@@ -25,7 +25,7 @@ export class FeaturesSectionComponent {
     {
       icon: 'file-text',
       title: "e-NCF",
-      description: "Emisión de comprobantes fiscales electrónicos válidos ante la DGII automáticamente."
+      description: "Gestión de secuencias para facturas y control de rangos de secuencias aprobadas."
     },
     {
       icon: 'bar-chart-3',

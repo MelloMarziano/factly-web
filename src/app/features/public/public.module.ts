@@ -33,9 +33,13 @@ import {
   MessageCircle,
   Mail,
   MapPin,
+  Signal,
+  Wifi,
+  Battery,
 } from 'lucide-angular';
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AppShowcaseSectionComponent } from './components/app-showcase-section/app-showcase-section.component';
 import { FeaturesSectionComponent } from './components/features-section/features-section.component';
 import { PricingSectionComponent } from './components/pricing-section/pricing-section.component';
 import { RegistrationSectionComponent } from './components/registration-section/registration-section.component';
@@ -76,12 +80,16 @@ import { FooterComponent } from './components/footer/footer.component';
       MessageCircle,
       Mail,
       MapPin,
+      Signal,
+      Wifi,
+      Battery,
     }),
   ],
   declarations: [
     PublicPage,
     HeroSectionComponent,
     HeaderComponent,
+    AppShowcaseSectionComponent,
     FeaturesSectionComponent,
     PricingSectionComponent,
     RegistrationSectionComponent,

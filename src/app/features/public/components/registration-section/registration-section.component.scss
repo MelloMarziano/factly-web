@@ -25,8 +25,8 @@ $bg-color: $brand-bg;
 }
 
 .bg-input {
-  background-color: #ffffff;
-  border: 1px solid rgba($primary-color, 0.1);
+  background-color: #f8f9fa;
+  border: 1px solid rgba($primary-color, 0.2);
   transition: all 0.2s ease;
 
   &:focus {
@@ -38,6 +38,7 @@ $bg-color: $brand-bg;
   &[readonly] {
     background-color: rgba($primary-color, 0.05);
     cursor: not-allowed;
+    border-color: rgba($primary-color, 0.1);
   }
 }
 

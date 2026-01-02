@@ -1,0 +1,52 @@
+@import 'variables';
+
+.app-showcase-section {
+  background-color: $brand-bg; // #f6f5ef
+}
+
+.phone-mockup {
+  max-width: 280px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+
+    .phone-frame {
+      box-shadow: 0 20px 40px rgba($primary-color, 0.15) !important;
+      border-color: $primary-color !important;
+    }
+  }
+}
+
+.phone-frame {
+  border: 8px solid #2d2d2d !important;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.screen-content {
+  aspect-ratio: 9/19.5; // Typical modern smartphone ratio
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.status-bar {
+  background-color: #2d2d2d !important;
+}
+
+// Ensure icons in status bar are white
+::ng-deep .status-bar lucide-icon {
+  stroke: white;
+}

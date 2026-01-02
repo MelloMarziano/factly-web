@@ -36,7 +36,7 @@
       <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 animate-on-scroll delay-300">
         <div *ngFor="let feature of features"
              class="feature-pill d-flex align-items-center gap-2 rounded-pill px-3 py-2 border border-secondary-subtle">
-          <lucide-icon [name]="feature.icon" style="color: #cda056;" [size]="16"></lucide-icon>
+          <lucide-icon [name]="feature.icon" class="text-brand-action" [size]="16"></lucide-icon>
           <span class="text-secondary-emphasis small fw-medium">{{feature.text}}</span>
         </div>
       </div>
