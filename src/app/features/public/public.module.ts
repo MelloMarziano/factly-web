@@ -49,6 +49,7 @@ import { WhatsappButtonComponent } from './components/whatsapp-button/whatsapp-b
 import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { AboutSectionComponent } from './components/about-section/about-section.component';
 
 @NgModule({
   imports: [
@@ -104,6 +105,7 @@ import { LandingComponent } from './components/landing/landing.component';
     TermsOfServiceComponent,
     PrivacyPolicyComponent,
     LandingComponent,
+    AboutSectionComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [

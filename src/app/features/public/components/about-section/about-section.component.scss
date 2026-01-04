@@ -1,0 +1,26 @@
+@import 'variables';
+
+.about-section {
+  background-color: $bg-app;
+  
+  .bg-brand-light {
+    background-color: rgba($brand-primary, 0.05);
+  }
+
+  .border-brand-primary-subtle {
+    border-color: rgba($brand-primary, 0.1) !important;
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+    }
+  }
+
+  .icon-box {
+    color: $brand-primary;
+  }
+}
