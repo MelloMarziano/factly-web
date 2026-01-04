@@ -17,7 +17,7 @@ const routes: Routes = [
   },
 
   { path: '', redirectTo: 'public', pathMatch: 'full' },
-  { path: '**', redirectTo: 'public/sign-in' },
+  { path: '**', redirectTo: 'public' },
 ];
 
 @NgModule({

@@ -18,15 +18,17 @@
   }
 }
 
-.animate-on-scroll {
-  opacity: 0;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  will-change: opacity, transform;
-
-  &.is-visible {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-}
+// Animation removed for reliability
+// .animate-on-scroll {
+//   opacity: 0;
+//   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+//   will-change: opacity, transform;
+//
+//   &.is-visible {
+//     opacity: 1; /* Ensure opacity is set to 1 */
+//     animation: fadeInUp 0.8s ease-out forwards;
+//   }
+// }
 
 // Stagger delays
 @for $i from 1 through 20 {

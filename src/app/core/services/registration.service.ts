@@ -37,6 +37,7 @@ export class RegistrationService {
       address,
       phone,
       adminUser,
+      fullName,
       certificatePassword,
     } = data;
 
@@ -48,8 +49,8 @@ export class RegistrationService {
         const uid = user.uid;
 
         // Update Auth Profile
-        if (adminUser) {
-          await updateProfile(user, { displayName: adminUser });
+        if (fullName) {
+          await updateProfile(user, { displayName: fullName });
         }
 
         const batch = writeBatch(this.firestore);
@@ -104,6 +105,7 @@ export class RegistrationService {
         batch.set(memberRef, {
           uid: uid,
           email: userEmail,
+          displayName: fullName || adminUser,
           role: 'owner',
           joinedAt: new Date(),
         });
@@ -112,7 +114,7 @@ export class RegistrationService {
         const userRef = doc(this.firestore, `users/${uid}`);
         batch.set(userRef, {
           email: userEmail,
-          displayName: adminUser,
+          displayName: fullName || adminUser,
           activeTenantId: companyRnc,
           createdAt: new Date(),
         });

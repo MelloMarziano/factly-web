@@ -12,6 +12,7 @@ export class RegistrationSectionComponent {
   registrationForm: FormGroup;
   selectedCertificate: File | null = null;
   selectedLogo: File | null = null;
+  showForm: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -21,14 +22,15 @@ export class RegistrationSectionComponent {
       {
         companyRnc: ['', Validators.required],
         companyName: ['', Validators.required],
-      address: [''],
-      phone: [''],
-      companyEmail: ['', [Validators.required, Validators.email]],
-      // certificateFile and logoFile are handled separately via file inputs
-      certificatePassword: [''],
-      adminUser: [{ value: 'admin', disabled: true }, Validators.required],
-      userEmail: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+        address: [''],
+        phone: [''],
+        companyEmail: ['', [Validators.required, Validators.email]],
+        // certificateFile and logoFile are handled separately via file inputs
+        certificatePassword: [''],
+        adminUser: [{ value: 'admin', disabled: true }, Validators.required],
+        fullName: ['', Validators.required],
+        userEmail: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
         confirmPassword: ['', Validators.required],
       },
       { validators: this.passwordMatchValidator }
@@ -44,6 +46,17 @@ export class RegistrationSectionComponent {
   onCertificateSelected(event: any) {
     const file = event.target.files[0];
     if (file) {
+      if (!file.name.endsWith('.p12')) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Archivo Incorrecto',
+          text: 'Por favor seleccione un archivo de certificado válido (.p12)',
+          confirmButtonColor: '#dc3545',
+        });
+        event.target.value = ''; // Reset input
+        this.selectedCertificate = null;
+        return;
+      }
       this.selectedCertificate = file;
     }
   }
@@ -51,7 +64,26 @@ export class RegistrationSectionComponent {
   onLogoSelected(event: any) {
     const file = event.target.files[0];
     if (file) {
+      if (!file.type.startsWith('image/')) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Archivo Incorrecto',
+          text: 'Por favor seleccione un archivo de imagen válido para el logo',
+          confirmButtonColor: '#dc3545',
+        });
+        event.target.value = ''; // Reset input
+        this.selectedLogo = null;
+        return;
+      }
       this.selectedLogo = file;
+    }
+  }
+
+  toggleForm() {
+    this.showForm = !this.showForm;
+    if (!this.showForm) {
+      // Optional: Reset form when cancelling?
+      // this.registrationForm.reset({ adminUser: 'admin' });
     }
   }
 

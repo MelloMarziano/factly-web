@@ -13,7 +13,46 @@
         <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
           <div class="card-body p-4 p-md-5 bg-card">
 
-            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <!-- Initial State: Call to Action -->
+            <div *ngIf="!showForm" class="text-center py-5">
+              <div class="mb-4">
+                <div class="d-inline-flex align-items-center justify-content-center bg-brand-light rounded-circle p-4 mb-3">
+                  <lucide-icon name="rocket" [size]="48" class="text-brand-primary"></lucide-icon>
+                </div>
+                <h3 class="fw-bold text-brand-primary mb-3">¡Estás a un paso de modernizar tu empresa!</h3>
+                <p class="text-secondary mb-4 mx-auto" style="max-width: 500px;">
+                  Únete a Factly hoy mismo y cumple con las normativas de facturación electrónica de la DGII de manera simple y segura.
+                </p>
+                <ul class="list-unstyled text-start d-inline-block mb-4">
+                  <li class="mb-2 d-flex align-items-center">
+                    <lucide-icon name="check-circle-2" [size]="20" class="text-success me-2"></lucide-icon>
+                    <span>Registro rápido y sencillo</span>
+                  </li>
+                  <li class="mb-2 d-flex align-items-center">
+                    <lucide-icon name="check-circle-2" [size]="20" class="text-success me-2"></lucide-icon>
+                    <span>Cumplimiento total con DGII</span>
+                  </li>
+                  <li class="mb-2 d-flex align-items-center">
+                    <lucide-icon name="check-circle-2" [size]="20" class="text-success me-2"></lucide-icon>
+                    <span>Seguridad de nivel empresarial</span>
+                  </li>
+                </ul>
+              </div>
+              <button (click)="toggleForm()" class="btn btn-brand-primary rounded-pill px-5 py-3 fw-bold shadow-lg d-inline-flex align-items-center gap-2 hover-scale">
+                Comenzar Registro
+                <lucide-icon name="arrow-right" [size]="20"></lucide-icon>
+              </button>
+            </div>
+
+            <!-- Form State -->
+            <form *ngIf="showForm" [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="animate-fade-in">
+
+              <div class="mb-4">
+                <button type="button" (click)="toggleForm()" class="btn btn-link text-decoration-none text-secondary p-0 d-flex align-items-center gap-2 mb-3">
+                  <lucide-icon name="arrow-left" [size]="18"></lucide-icon>
+                  Volver
+                </button>
+              </div>
 
               <!-- Section 1: Datos de la Empresa -->
               <div class="mb-5">
@@ -96,6 +135,10 @@
                   <div class="col-md-6">
                     <label class="form-label small fw-bold text-brand-primary">Usuario Administrador *</label>
                     <input type="text" class="form-control bg-input" formControlName="adminUser" value="admin" readonly>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-brand-primary">Nombre de la Persona *</label>
+                    <input type="text" class="form-control bg-input" formControlName="fullName" placeholder="Juan Pérez">
                   </div>
                   <div class="col-md-6">
                     <label class="form-label small fw-bold text-brand-primary">Correo de Inicio de Sesión *</label>
