@@ -104,8 +104,8 @@ export class RegistrationSectionComponent {
       this.registrationService
         .registerCompany(
           formData,
-          this.selectedCertificate || undefined,
-          this.selectedLogo || undefined
+          this.selectedLogo || undefined,
+          this.selectedCertificate || undefined
         )
         .subscribe({
           next: (user) => {
